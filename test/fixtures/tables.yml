@@ -1,0 +1,7 @@
+one:
+  number: 1
+  restaurant: one
+
+two:
+  number: 2
+  restaurant: one

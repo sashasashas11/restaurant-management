@@ -1,24 +1,11 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Необходимо сделать систему для резервации столов в ресторанах.
+В каждом ресторане есть столы. Эти столы можно резервировать. 
+При этом шаг резервации - 30 минут, а пользователь может резервировать стол на 30, 60, 90 и т.д. минут. 
+В каждой резервации должен быть пользователь. 
+У каждого ресторана есть график работы, который может переваливать за полночь.
+Резервации на один стол не должны пересекаться. 
+При этом, если одна резервация закончилась в 5 вечера, вторая может начинаться в 5 вечера.
+Интересует только реализация моделей и структура базы данных.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...

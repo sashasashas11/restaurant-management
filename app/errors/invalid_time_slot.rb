@@ -1,0 +1,1 @@
+class InvalidTimeSlot < BusinessError; end
