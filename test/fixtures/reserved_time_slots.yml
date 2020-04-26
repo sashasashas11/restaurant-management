@@ -1,0 +1,17 @@
+one:
+  user: one
+  table: one
+  reservation: one
+  time: 25-04-2020 10:30
+
+two:
+  user: one
+  table: one
+  reservation: one
+  time: 26-04-2020 12:00
+
+three:
+  user: one
+  table: two
+  reservation: one
+  time: 26-04-2020 10:30
