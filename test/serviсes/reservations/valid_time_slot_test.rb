@@ -22,7 +22,7 @@ module Reservations
     end
 
     def test_not_work_time
-      restaurant.update!(excluded_hours_string: '10')
+      restaurant.update!(excluded_hours: [10])
       result = service.call(table: table, time_slot: Time.zone.parse('10:00'))
 
       assert_equal false, result

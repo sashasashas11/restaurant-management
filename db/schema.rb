@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_114034) do
     t.string "name"
     t.integer "slot_step", default: 30
     t.integer "max_reserved_period", default: 24
-    t.string "excluded_hours_string", default: ""
+    t.string "excluded_hours"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
