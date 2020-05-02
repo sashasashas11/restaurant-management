@@ -12,9 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_04_26_114034) do
 
-  create_table "reservations", force: :cascade do |t|
-    t.integer "table_id"
-    t.integer "user_id"
+  create_table "reservations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "table_id"
+    t.bigint "user_id"
     t.datetime "from"
     t.datetime "to"
     t.integer "duration"
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2020_04_26_114034) do
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
 
-  create_table "reserved_time_slots", force: :cascade do |t|
-    t.integer "reservation_id"
-    t.integer "table_id"
-    t.integer "user_id"
+  create_table "reserved_time_slots", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "reservation_id"
+    t.bigint "table_id"
+    t.bigint "user_id"
     t.datetime "time"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 2020_04_26_114034) do
     t.index ["user_id"], name: "index_reserved_time_slots_on_user_id"
   end
 
-  create_table "restaurants", force: :cascade do |t|
+  create_table "restaurants", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.integer "slot_step", default: 30
     t.integer "max_reserved_period", default: 24
@@ -45,15 +45,15 @@ ActiveRecord::Schema.define(version: 2020_04_26_114034) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "tables", force: :cascade do |t|
+  create_table "tables", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "number"
-    t.integer "restaurant_id"
+    t.bigint "restaurant_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_tables_on_restaurant_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "full_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
