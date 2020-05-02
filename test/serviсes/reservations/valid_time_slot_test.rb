@@ -16,20 +16,20 @@ module Reservations
     end
 
     def test_valid_slot
-      result = service.call(table: table, time_slot: '10:30')
+      result = service.call(table: table, time_slot: Time.zone.parse('10:30'))
 
       assert_equal true, result
     end
 
     def test_not_work_time
       restaurant.update!(excluded_hours_string: '10')
-      result = service.call(table: table, time_slot: '10:00')
+      result = service.call(table: table, time_slot: Time.zone.parse('10:00'))
 
       assert_equal false, result
     end
 
     def test_not_correct_step
-      result = service.call(table: table, time_slot: '10:10')
+      result = service.call(table: table, time_slot: Time.zone.parse('10:10'))
 
       assert_equal false, result
     end
@@ -38,12 +38,6 @@ module Reservations
       result = service.call(table: table, time_slot: 'not_valid_time')
 
       assert_equal false, result
-    end
-
-    def test_valid_time_object
-      result = service.call(table: table, time_slot: Time.zone.parse('10:30'))
-
-      assert_equal true, result
     end
 
     def test_yesterday
@@ -59,7 +53,7 @@ module Reservations
     end
 
     def test_reserved_time
-      result = service.call(table: table, time_slot: '12:00')
+      result = service.call(table: table, time_slot: Time.zone.parse('12:00'))
 
       assert_equal false, result
     end

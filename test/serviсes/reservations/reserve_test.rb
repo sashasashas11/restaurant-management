@@ -6,6 +6,13 @@ module Reservations
       @service = ::Reservations::Reserve
       @user = users(:one)
       @table = tables(:one)
+
+      Time.zone = 'UTC'
+      travel_to Time.zone.parse('26/04/2020 09:00')
+    end
+
+    teardown do
+      travel_back
     end
 
     def test_success_reserve
